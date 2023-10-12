@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" property="og:title" content="ITFactory Exam Project">
+
+    <!-- <link rel="canonical" href="https://yourwebsite.com/"> -->
+    <title>Micu Alexandru ITFactory Proiect</title>
+
+
+    <link href = "style.css" rel="stylesheet";>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+
+    <script src="https://kit.fontawesome.com/094e8bbad4.js" crossorigin="anonymous"></script>
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+<span id = "background-color"></span>
+<span id = "background-gradient" class = "black-blue-gradient-background"></span>    
+
+<div id = "parallax-wrapper">
+   
+    <header>
+        <nav>
+            <div id = "logo">
+                <h1>Micu Alexandru Iulian</h1>
+                <p>Developer & Designer</p>
+            </div>
+            <div>
+                <ul id = "nav-container">
+                    <li onclick = "scrollWindowTo('welcome-section')">Welcome</li>
+                    <li onclick = "scrollWindowTo('about-section')">About</li>
+                    <li onclick = "scrollWindowTo('portfolio-section')">Portfolio</li>
+                    <li id = "theme-button" onclick = "changeTheme()">
+                        <div id = "theme-container">
+                            <div id = "theme-vehicle">
+                                <i id="theme-moon-icon" class="fa-solid fa-moon fa-xl"></i>
+                                <i id="theme-sun-icon"class="fa-solid fa-sun fa-xl"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- <div style = "height: 50dvh;"></div> -->
+    <section id = "welcome-section" class = "content-section">
+        <div id = "welcome-screen-welcome">
+            <h2>Welcome to my page</h2>
+            <p>I am an aspiring web developer & designer with a passion for clean, sharp, functional environments.</p>
+        </div>
+    </section>
+
+
+    <img src = "Images/Jellyfish1.png" class = "background-image flavor-img-high">
+    <img src = "Images/Ink.png" style = "display: none" id = "image-source-anchor-netlify-ink">
+    <img src = "Images/Large.png" style = "display: none" id = "image-source-anchor-netlify-large">
+    <img src = "" class = "background-image flavor-img-low color-change-picture">
+    <!-- <div class = "padding-div"></div> -->
+    <!-- <div class = "parallax-container">
+        
+     
+
+        <img src = "Images/tanMountain.png" class = "background-image">
+        <img src = "Images/tanRocks.png" class = "midground-image">
+        <img src = "Images/tanRocks.png" class = "midground-image reversed">
+        <img src = "Images//Grass.png" class = "foreground-image">
+        <div id = "blocker-div" class = "foreground-image"></div> 
+    </div>-->
+    
+    <!-- img foreground
+    img background
+    img -->
+
+    <main>
+
+        <section id = "about-section" class = "content-section">
+            <div class = "section-header">
+                <h3>About</h3>
+                <p onclick = "scrollWindowTo('welcome-section')">Back to top</p>
+            </div>
+
+            <div class = "width-75 centered-horizontally">
+                <h4>Who am I?</h4>
+                <p>I am an up and coming web developer and designer based in Sibiu, Romania.</p>
+                <p>With a background in natural sciences, Geophysics, Science Journalism, and tehnical communications, I bring my unique skillset to bear in creating stunning web environments.</p>
+                
+            </div>
+
+        </section>
+        
+        
+
+        <section id = "portfolio-section" class = "content-section">
+            <div class = "section-header">
+                <h3>Portfolio</h3>
+                <p onclick = "scrollWindowTo('welcome-section')">Back to top</p>
+            </div>
+
+            <div class = "width-75 centered-horizontally">
+                <h4>The technologies I used</h4>
+                <p>Here are some of the technologies I enjoy most:</p>
+                
+
+                <div class = "tech-demo-container">
+
+                    <div class = "tech-demo-card-holder">
+
+                        <div class = "tech-demo-card populated-card">
+
+                            <div class = "tech-demo-image-background">
+                                <img src = "Images/JS.png" class = "techdemo-image">
+                            </div>
+
+                            <div class = "tech-demo-text-container">
+                                <p class = "tech-demo-flavor-text">Provides functionality and interactivity</p>
+                            </div> 
+
+                        </div>
+                          
+                    </div>
+
+                    <div class = "tech-demo-card-holder">
+                        
+                        <div class = "tech-demo-card populated-card">
+
+                            <div class = "tech-demo-image-background">
+                                <img src = "Images/HMTL.png" class = "techdemo-image">
+                            </div>
+
+                            <div class = "tech-demo-text-container">
+                                <p class = "tech-demo-flavor-text">Brings structure</p>
+                            </div> 
+
+                        </div>
+                          
+                    </div>
+
+                    <div class = "tech-demo-card-holder">
+                        
+                        <div class = "tech-demo-card populated-card">
+
+                            <div class = "tech-demo-image-background">
+                                <img src = "Images/CSS.png" class = "techdemo-image">
+                            </div>
+
+                            <div class = "tech-demo-text-container">
+                                <p class = "tech-demo-flavor-text">Makes everything look goo</p>
+                            </div> 
+
+                        </div>
+                          
+                    </div>
+    
+                </div>
+                
+            </div>
+            
+        </section>
+
+        <section id = "end-section" class = "content-section">
+            <div class = "section-header">
+                <h3>End</h3>
+                <p onclick = "scrollWindowTo('welcome-section')">Back to top</p>
+            </div>
+            
+            <div class = "width-75 centered-horizontally">
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+
+    </footer>
+
+</div>
+</body>
