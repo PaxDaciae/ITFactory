@@ -29,7 +29,7 @@ function setLightTheme(){
     document.getElementById("theme-moon-icon").classList.add('hidden')
     
     Object.values(changingImagesByTheme).forEach(image => {
-        image.src = "Images/Ink.png";
+        image.src = "../Images/Ink.png";
 
         // ENABLE FOR NETLIFY HOSTING:
         // image.currentSrc = document.getElementById('image-source-anchor-netlify-Ink').currentSrc;
@@ -66,7 +66,7 @@ function setDarkTheme(){
 
 
     Object.values(changingImagesByTheme).forEach(image => {
-        image.src = "Images/Large.png"
+        image.src = "../Images/Large.png"
 
         // ENABLE FOR NETLIFY HOSTING:
         // image.currentSrc = document.getElementById('image-source-anchor-netlify-large').currentSrc;
