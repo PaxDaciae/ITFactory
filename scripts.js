@@ -1,4 +1,4 @@
-// localStorage.clear();
+// UPDATED THEME AUTOFUNCTION
 
 const changingImagesByTheme = document.getElementsByClassName("color-change-picture");
 
@@ -31,7 +31,7 @@ function setLightTheme(){
     Object.values(changingImagesByTheme).forEach(image => {
         if(image.id == "Ink-image"){
             image.style.setProperty("display", 'block')
-        }else if (image.id == "Large-image"){
+        }else{
             image.style.setProperty("display", 'none')
         };
 
@@ -72,7 +72,7 @@ function setDarkTheme(){
     Object.values(changingImagesByTheme).forEach(image => {
         if(image.id == "Large-image"){
             image.style.setProperty("display", 'block')
-        }else if (image.id == "Ink-image"){
+        }else{
             image.style.setProperty("display", 'none')
         };
 
@@ -91,13 +91,13 @@ function getStoredTheme(){
     if(localStorage.getItem('theme') === null){
         setDarkTheme()
     }
-    if(localStorage.getItem('theme')){
-        if(localStorage.getItem('theme') == 'dark') {
-            setDarkTheme() 
-        }else if(localStorage.getItem('theme') == 'light'){
-            setLightTheme()
-        }
+
+    if(localStorage.getItem('theme') == 'dark') {
+        setDarkTheme() 
+    }else{
+        setLightTheme()
     }
+
 }
 function changeTheme(){
     // console.log("THEME", localStorage.getItem('theme'))
