@@ -31,7 +31,7 @@ function setLightTheme(){
     Object.values(changingImagesByTheme).forEach(image => {
         if(image.id == "Ink-image"){
             image.style.setProperty("display", 'block')
-        }else{
+        }else if (image.id == "Large-image"){
             image.style.setProperty("display", 'none')
         };
 
@@ -72,7 +72,7 @@ function setDarkTheme(){
     Object.values(changingImagesByTheme).forEach(image => {
         if(image.id == "Large-image"){
             image.style.setProperty("display", 'block')
-        }else{
+        }else if (image.id == "Ink-image"){
             image.style.setProperty("display", 'none')
         };
 
@@ -88,10 +88,13 @@ function setDarkTheme(){
 }
 
 function getStoredTheme(){
+    if(localStorage.getItem('theme') === null){
+        setDarkTheme()
+    }
     if(localStorage.getItem('theme')){
         if(localStorage.getItem('theme') == 'dark') {
             setDarkTheme() 
-        }else{
+        }else if(localStorage.getItem('theme') == 'light'){
             setLightTheme()
         }
     }
