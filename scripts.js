@@ -90,6 +90,7 @@ function setDarkTheme(){
 function getStoredTheme(){
     if(localStorage.getItem('theme') === null){
         setDarkTheme()
+        localStorage.setItem('theme', "dark")
     }
 
     if(localStorage.getItem('theme') == 'dark') {
