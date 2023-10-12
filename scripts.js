@@ -29,7 +29,11 @@ function setLightTheme(){
     document.getElementById("theme-moon-icon").classList.add('hidden')
     
     Object.values(changingImagesByTheme).forEach(image => {
-        image.src = "../Images/Ink.png";
+        if(image.id == "Ink-image"){
+            image.style.setProperty("display", 'block')
+        }else{
+            image.style.setProperty("display", 'none')
+        };
 
         // ENABLE FOR NETLIFY HOSTING:
         // image.currentSrc = document.getElementById('image-source-anchor-netlify-Ink').currentSrc;
@@ -66,12 +70,15 @@ function setDarkTheme(){
 
 
     Object.values(changingImagesByTheme).forEach(image => {
-        image.src = "../Images/Large.png"
+        if(image.id == "Large-image"){
+            image.style.setProperty("display", 'block')
+        }else{
+            image.style.setProperty("display", 'none')
+        };
 
         // ENABLE FOR NETLIFY HOSTING:
-        // image.currentSrc = document.getElementById('image-source-anchor-netlify-large').currentSrc;
+        // image.currentSrc = document.getElementById('image-source-anchor-netlify-Ink').currentSrc;
     })
-  
 
     // document.getElementById("theme-sun-icon").style.setProperty('opacity', '0');
     // document.getElementById("theme-moon-icon").style.setProperty('opacity', '1');
