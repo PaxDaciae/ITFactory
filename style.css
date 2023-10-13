@@ -248,19 +248,10 @@ nav{
 
 /* 3d work in CSS */
 
-.parallax-container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200%;
-    transform-style: preserve-3d;
-    z-index: -1;
-}
-
 .padding-div{
     min-height: 500px;
 }
+
 .background-image{
     position: absolute;
     height: 100%;
@@ -268,7 +259,6 @@ nav{
     object-fit: contain;
     transform: translateZ(-15px) scale(2);
     width: 100%;
-    
     z-index: -1;
 }
 .flavor-img-high{
@@ -276,16 +266,8 @@ nav{
 }
 .flavor-img-low{
     top: 250dvh;
-    transform: translateZ(5px) scale(1) translateX(20dvw);
+    transform: translateZ(5px) translateX(20dvw) scale(1);
 }
-
-
-.reversed{
-    transform: translateZ(-10px) scaleX(-1);
-    right: -39dvw;
-    top: 5dvh;
-}
-
 
 .tech-demo-container{
     width: 100%;
