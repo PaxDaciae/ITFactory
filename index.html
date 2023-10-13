@@ -49,39 +49,29 @@
         </nav>
     </header>
     <!-- <div style = "height: 50dvh;"></div> -->
-    <section id = "welcome-section" class = "content-section">
-        <div id = "welcome-screen-welcome">
-            <h2>Welcome to my page</h2>
-            <p>I am an aspiring web developer & designer with a passion for clean, sharp, functional environments.</p>
-        </div>
-    </section>
 
 
-    <img src = "Images/Jellyfish1.png" class = "background-image flavor-img-high">
-    <img src = "Images/Ink.png" style = "display: none" id="Ink-image" class = "background-image flavor-img-low color-change-picture">
-    <img src = "Images/Large.png" style = "display: none" id="Large-image" class = "background-image flavor-img-low color-change-picture">
-    <!-- <img src = "" class = "background-image flavor-img-low color-change-picture"> -->
-    <!-- <div class = "padding-div"></div> -->
-    <!-- <div class = "parallax-container">
-        
-     
-
-        <img src = "Images/tanMountain.png" class = "background-image">
-        <img src = "Images/tanRocks.png" class = "midground-image">
-        <img src = "Images/tanRocks.png" class = "midground-image reversed">
-        <img src = "Images//Grass.png" class = "foreground-image">
-        <div id = "blocker-div" class = "foreground-image"></div> 
-    </div>-->
-    
-    <!-- img foreground
-    img background
-    img -->
+    <img src = "Images/Jellyfish1.png" class = "background-image flavor-img-high" alt = "Lion's Mane Jellyfish Portrait." title = "Welcome Screen Jellyfish">
+    <img src = "Images/Ink.png" style = "display: none" id="Ink-image" class = "background-image flavor-img-low color-change-picture" alt = "Ink blot resembling a jellyfish in shape."  title = "Low-screen Inky Jellyfish">
+    <img src = "Images/Large.png" style = "display: none" id="Large-image" class = "background-image flavor-img-low color-change-picture" alt ="Full-body Lion's Mane Jellyfish."  title = "Low-Screen Lion's Mane Jellyfish">
 
     <main>
 
-        <section id = "about-section" class = "content-section">
+        <section id = "welcome-section" class = "content-section">
+            <div id = "welcome-screen-welcome">
+            <header>
+                <h2>Welcome to my page</h2>
+            </header>
+                <p>I am an aspiring web developer & designer with a passion for clean, sharp, functional environments.</p>
+            </div>
+        </section>
+
+        <section id = "about-section" class = "content-section centered-vertically">
             <div class = "section-header">
-                <h3>About</h3>
+                <header>
+                    <h3>About</h3>
+                </header>
+                
                 <p onclick = "scrollWindowTo('welcome-section')">Back to top</p>
             </div>
 
@@ -93,69 +83,149 @@
             </div>
 
         </section>
-        
-        
 
-        <section id = "portfolio-section" class = "content-section">
+        <section id = "portfolio-section" class = "content-section centered-vertically">
             <div class = "section-header">
-                <h3>Portfolio</h3>
+                <header>
+                    <h3>Portfolio</h3>
+                </header>
                 <p onclick = "scrollWindowTo('welcome-section')">Back to top</p>
             </div>
 
             <div class = "width-75 centered-horizontally">
-                <h4>The technologies I used</h4>
-                <p>Here are some of the technologies I enjoy most:</p>
+                <h4>Technoloy</h4>
+                <p>Here are the languages I used for this project:</p>
                 
 
                 <div class = "tech-demo-container">
 
-                    <div class = "tech-demo-card-holder">
+                    <div class = "card-and-expansive-wrapper wrapper-hover" id ="wrapper1" onclick = "expand(1)">
+                        <div class = "tech-demo-expansive expansive1">
+                            <div class = "tech-demo-card populated-card">
 
-                        <div class = "tech-demo-card populated-card">
-
-                            <div class = "tech-demo-image-background">
-                                <img src = "Images/JS.png" class = "techdemo-image">
+                                <div class = "tech-demo-image-background">
+                                    <img src = "Images/JS.png" class = "techdemo-image">
+                                </div>
+    
+                                <div class = "tech-demo-text-container">
+                                    <p class = "tech-demo-flavor-text">JavaScript</p>
+                                </div> 
+    
                             </div>
 
-                            <div class = "tech-demo-text-container">
-                                <p class = "tech-demo-flavor-text">Provides functionality and interactivity</p>
-                            </div> 
-
+                            <div class = "tech-demo-expanded-text">
+                                <article>
+                                    <ol>
+                                        <li>
+                                            <p> <span class = "title">Dinamic Background Gradient Opacity:</span><span class = "content"> this feature is based on a Scroll listener to dynamically change the opacity of the welcome screen background gradient.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Color Theme change:</span><span class = "content"> changes the page's colors based on a locally-stored 'theme' variable. The changes are mediated though CSS variables, a series of classes, and (very rarely) inline styles.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Local storage of Theme: </span><span class = "content"> changes the value of the locally-stored 'theme' variable based on the user's selection of theme.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Stored Theme detection and default theme:</span><span class = "content"> the website checks if a Theme value is saved in local storage. If not (first-time access, local storage has been cleared, private browsing, etc), a default value, the Dark Theme, is saved to local storage and applied on the page.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">View shift on nav items:</span><span class = "content"> the nav items are simple &lt;li&gt; items. Viewport shift is mediated through a JS function that uses a simple if() conditional and retrieves an element's relative position using the .getBoundingClientRect() method -- or uses the 0 vertical position for the Welcome screen -- and then navigates to that value using the .scrollTo() metod on the &lt;body&gt; element.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">DOM manipulation:</span><span class = "content"> in this example, DOM manipulation is limited to retrieving elements and attribute (style, class, Id) manipulation.</span></p>
+                                        </li>
+                                    </ol>
+                                </article>
+                            </div>
                         </div>
-                          
                     </div>
+                    
+                    <div class = "card-and-expansive-wrapper wrapper-hover" id ="wrapper2" onclick = "expand(2)">
+                        <div class = "tech-demo-expansive expansive2">
+                            <div class = "tech-demo-card populated-card">
+    
+                                <div class = "tech-demo-image-background">
+                                    <img src = "Images/HMTL.png" class = "techdemo-image">
+                                </div>
+    
+                                <div class = "tech-demo-text-container">
+                                    <p class = "tech-demo-flavor-text">HTML</p>
+                                </div> 
+    
+                            </div>
+                              
+                            <div class = "tech-demo-expanded-text">
+                                <article>
+                                    <ol>
+                                        <li>
+                                            <p> <span class = "title">SEO:</span><span class = "content"> Search Engine Optimization of the site was performed through the use of semantic HTML tags, most importantly: &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt; and &lt;header&gt;. Metadata was also used to promote SEO rating through the use of &lt;title&gt; &lt;meta description=""&gt; and &lt;img alt=""&gt; attributes.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Accessibility - alt attribute</span><span class = "content"> some accesibility features were provided through the use of alt attributes on &lt;img&gt tags.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Scripts - Defer Attribute</span><span class = "content"> the defer attribute was used to ensure that JavaScript scripts are fully-loaded before the page is displayed to the user, in order to avoid janky behavior or errors.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Fonts - Preload Attribute</span><span class = "content"> the preload attribute was applied to the Google Font link in order to ensure that the proper font is displayed on the page.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Interactivity - Onclick attribute</span><span class = "content"> the onclick attribute was applied to HTML elements to allow their linking to various functions in JavaScript.</span></p>
+                                        </li>
+                                    </ol>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class = "card-and-expansive-wrapper wrapper-hover" id ="wrapper3" onclick = "expand(3)">
+                        <!-- <div class = "tech-demo-card-holder" id ="card3"></div> -->
 
-                    <div class = "tech-demo-card-holder">
-                        
-                        <div class = "tech-demo-card populated-card">
-
-                            <div class = "tech-demo-image-background">
-                                <img src = "Images/HMTL.png" class = "techdemo-image">
+                        <div class = "tech-demo-expansive expansive3" >
+                            <div class = "tech-demo-card populated-card">
+    
+                                <div class = "tech-demo-image-background">
+                                    <img src = "Images/CSS.png" class = "techdemo-image">
+                                </div>
+    
+                                <div class = "tech-demo-text-container">
+                                    <p class = "tech-demo-flavor-text">CSS</p>
+                                </div> 
+    
                             </div>
 
-                            <div class = "tech-demo-text-container">
-                                <p class = "tech-demo-flavor-text">Brings structure</p>
-                            </div> 
-
-                        </div>
-                          
-                    </div>
-
-                    <div class = "tech-demo-card-holder">
-                        
-                        <div class = "tech-demo-card populated-card">
-
-                            <div class = "tech-demo-image-background">
-                                <img src = "Images/CSS.png" class = "techdemo-image">
+                            <div class = "tech-demo-expanded-text">
+                                <article>
+                                    <ol>
+                                        <li>
+                                            <p> <span class = "title">Shifting Welcome Screen Background Gradient Position</span><span class = "content"> the color-shifting gradient background on the welcome screen was created fully-in CSS, using resizing and a @keyframes ruleset manipulating the gradient's position relative to the viewport.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Parallax:</span><span class = "content"> this effect was created mostly in CSS, by defining contexts with different perspectives (using 'perspective' and 'transformY()' properties'). These contexts move at their own paces relative to the viewport, allowing elements placed in these context to appear to slide by each other at different speeds.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">@media Breakpoints:</span><span class = "content"> used to make the website responsive and good-looking on multiple screen sizes. The website was developed using a mobile-first approach.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">@keyframes Animations:</span><span class = "content"> they provide visual interest to the user.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Variables:</span><span class = "content"> used to change the properties inside multiple selectors easily, at once. Mostly used for colors in this site.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Alignment using Flexbox:</span><span class = "content"> used to align items vertically and/or horizontally in order to preserve responsiveness and looks.</span></p>
+                                        </li>
+                                        <li>
+                                            <p> <span class = "title">Auxiliary Classes: </span><span class = "content"> used to quickly and easily apply / remove / toggle different style properties to multiple HTML elements.</span></p>
+                                        </li>
+                                    </ol>
+                                </article>
                             </div>
-
-                            <div class = "tech-demo-text-container">
-                                <p class = "tech-demo-flavor-text">Makes everything look goo</p>
-                            </div> 
-
                         </div>
-                          
+
+
                     </div>
+                   
     
                 </div>
                 
