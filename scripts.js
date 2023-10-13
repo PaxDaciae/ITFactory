@@ -1,12 +1,10 @@
-// UPDATED THEME AUTOFUNCTION
-
 const changingImagesByTheme = document.getElementsByClassName("color-change-picture");
 
-documentBackground = document.getElementById("background-gradient").classList
+documentBackground = document.getElementById("background-gradient").classList;
 backgroundClasses = Object.values(documentBackground);
+let root = document.querySelector(':root');
+let techDemoExpansive = Object.values(document.getElementsByClassName("tech-demo-expansive"));
 
-let root = document.querySelector(':root')
-let techDemoExpansive = Object.values(document.getElementsByClassName("tech-demo-expansive"))
 function setLightTheme(){
     documentBackground.add("magenta-teal-gradient-background")
     documentBackground.remove("black-blue-gradient-background")
@@ -24,7 +22,6 @@ function setLightTheme(){
     document.getElementById("theme-vehicle").style.transform = "translateX(-71.5px)";
 
     document.getElementById("theme-sun-icon").classList.remove('hidden')
-
     document.getElementById("theme-moon-icon").classList.add('hidden')
     
     Object.values(changingImagesByTheme).forEach(image => {
@@ -33,22 +30,7 @@ function setLightTheme(){
         }else{
             image.style.setProperty("display", 'none')
         };
-
-        // ENABLE FOR NETLIFY HOSTING:
-        // image.currentSrc = document.getElementById('image-source-anchor-netlify-Ink').currentSrc;
     })
-    
-   
-
-    // document.getElementById("theme-sun-icon").style.setProperty('opacity', '1');
-    // document.getElementById("theme-moon-icon").style.setProperty('opacity', '0');
-    // document.querySelector(':root').style.setProperty('--text-color', rgba(36, 36, 36, 1));
-    // document.getElementById("background-color").style.setProperty('background-color',  'white')
-    
-    // document.getElementById("background-color").style.setProperty('background-color', ' rgba(27,200,240,1)')
-    // document.querySelector(':root').style.setProperty('--background-gradient', 'linear-gradient(135deg, rgba(243,0,255,1) 0%, rgba(0,255,248,1) 100%)');
-
-    // console.log(document.querySelector(':root').style)
 }
 function setDarkTheme(){
     documentBackground.add("black-blue-gradient-background")
@@ -69,16 +51,12 @@ function setDarkTheme(){
     document.getElementById("theme-sun-icon").classList.add('hidden')
     document.getElementById("theme-moon-icon").classList.remove('hidden')
 
-
     Object.values(changingImagesByTheme).forEach(image => {
         if(image.id == "Large-image"){
             image.style.setProperty("display", 'block')
         }else{
             image.style.setProperty("display", 'none')
         };
-
-        // ENABLE FOR NETLIFY HOSTING:
-        // image.currentSrc = document.getElementById('image-source-anchor-netlify-Ink').currentSrc;
     })
 
     // document.getElementById("theme-sun-icon").style.setProperty('opacity', '0');
@@ -87,7 +65,6 @@ function setDarkTheme(){
  
     
 }
-
 function getStoredTheme(){
     if(localStorage.getItem('theme') === null){
         setDarkTheme()
@@ -99,7 +76,6 @@ function getStoredTheme(){
     }else{
         setLightTheme()
     }
-
 }
 function changeTheme(){
     // console.log("THEME", localStorage.getItem('theme'))
@@ -110,28 +86,6 @@ function changeTheme(){
         setLightTheme()
         localStorage.setItem('theme', "light")
     }
-
-    // if(localStorage.getItem('theme') !== "light" || localStorage.getItem('theme') !== "dark"){
-    //     if(backgroundClasses.includes("black-blue-gradient-background")){
-    //         setLightTheme()
-    //         localStorage.setItem('theme', "light")
-    //     }else{
-    //         setDarkTheme()
-    //         localStorage.setItem('theme', "dark")
-    //     }
-    // }
-    // else{
-    //     if(theme == "light"){
-    //         setDarkTheme()
-    //         localStorage.setItem('theme', "dark")
-    //     }
-    //     else {
-    //         setLightTheme()
-    //         localStorage.setItem('theme', "light")
-    //     }
-    // }
-    console.log("THEME 2", localStorage.getItem('theme'))
-    // console.log(Object.values(documentBackground), typeof(documentBackground))
 }
 
 document.getElementById("parallax-wrapper").addEventListener("scroll", setScrollPercent);
@@ -139,12 +93,9 @@ document.getElementById("parallax-wrapper").addEventListener("resize", setScroll
 
 function setScrollPercent() {
     const pageElement = document.getElementById("parallax-wrapper")
-    // console.log("SCRLTOP", pageElement.scrollTop, "CHEIT", pageElement.clientHeight)
     const percentageOfScreenScrolled = 1 - (pageElement.scrollTop / pageElement.clientHeight)
     document.getElementById('background-gradient').style.setProperty("--scrollPercent", Math.max(percentageOfScreenScrolled, 0))
-    // console.log("OPACITY", Math.max(percentageOfScreenScrolled, 0))
 }
-
 function scrollWindowTo(divID){
     const target = document.getElementById(divID);
     const body = document.getElementById('parallax-wrapper')
@@ -152,11 +103,8 @@ function scrollWindowTo(divID){
         body.scrollTo(0, -1000)
     } else {
         body.scrollTo(0, (target.getBoundingClientRect().y - 10))
-
     }
 }
-
-
 function expand(number){
     targets=Object.values(document.getElementsByClassName(`expansive${number}`));
     targets.forEach(target=>
@@ -166,3 +114,5 @@ function expand(number){
 
 getStoredTheme()
 setScrollPercent()
+
+
