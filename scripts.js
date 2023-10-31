@@ -112,6 +112,45 @@ function expand(number){
     document.getElementById(`wrapper${number}`).classList.remove('wrapper-hover')
 }
 
+function changeOpacity(){
+    console.log("Opacity", event.target)
+    const targetSquare = event.target;
+    targetSquare.remove();
+    
+}
+
+class ColorSquare {
+    constructor(r, g, b, name) {
+      this.values = [r, g, b];
+      this.name = name
+    }
+    getColor() {
+      return this.values;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    createSquare(){
+        
+        const target = document.getElementById("square-holder")
+        let square = document.createElement("div")
+
+        square.classList.add("colored-square");
+        square.style.setProperty("background-color", `rgba(${this.getColor().toString()})`)
+        square.setAttribute("onclick", "changeOpacity()");
+
+        target.append(square);
+
+        document.getElementById("explanation-text").innerHTML = `<em>Class: ColorSquare, Object: ${this.getName()}Square, color value: (${this.getColor()}).</em>`
+    }
+  }
+
+  const redSquare = new ColorSquare(255, 0, 0, "red");
+  const greenSquare = new ColorSquare(0, 255, 0, "green");
+  const blueSquare = new ColorSquare(0, 0, 255, "blue");
+
 getStoredTheme()
 setScrollPercent()
 

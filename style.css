@@ -486,3 +486,48 @@ nav{
         height: 50dvh;
     }
 }
+
+#square-holder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50dvw;
+    min-height: 5dvh;
+    border: 2px;
+    border-color: var(--text-color);
+    border-style: solid;
+    margin: auto;
+    margin-top: 10dvh;
+}
+
+.colored-square{
+    min-width: 5dvw;
+    min-height: 5dvh;
+    border: 2px;
+    border-color: var(--text-color);
+    border-style: solid;
+}
+
+.explanation-holder{
+    margin: auto;
+    margin-top:5rem;
+    width: 80%;
+}
+.explanation-holder > p{
+    text-align: center;
+    width: 98%;
+    margin: auto;
+    margin-top: 1em;
+}
+#explanation-text{
+    width:50%;
+}
+#color-button-holder{
+    
+    max-width: 30dvw;
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    margin: auto;
+    margin-top: 5em;
+}
